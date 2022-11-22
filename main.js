@@ -1,3 +1,15 @@
+/*CODECADEMY PROJECT
+Context: The company that you work for suspects that 
+credit card distributors have been mailing out cards
+that have invalid numbers. In this project, you have
+the role of a clerk who checks if credit cards are
+valid. Every other clerk currently checks using pencil 
+and paper, but you’ll be optimizing the verification 
+process using your knowledge of functions 
+and loops to handle multiple credit cards at a time.
+
+*/
+
 // All valid credit card numbers
 const valid1 = [4, 5, 3, 9, 6, 7, 7, 9, 0, 8, 0, 1, 6, 8, 0, 8]
 const valid2 = [5, 5, 3, 5, 7, 6, 6, 7, 6, 8, 7, 5, 1, 4, 3, 9]
@@ -21,7 +33,7 @@ const mystery5 = [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3]
 
 // An array of all the arrays above
 const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5]
-// Add your functions below:
+// using Luhn Algorithm to validate the credit card numbers
 const validateCred = array =>{
     var num = 0 ;
     for(let i = array.length -1; i >=0; i = i -2){
@@ -48,6 +60,7 @@ const validateCred = array =>{
       return false;
     }
   }
+  //using the validateCred to validate a batch of credit card numbers
   const findInvalidCards = array =>{
     let invalidCard = [];
     for (let i = 0; i < array.length; i++){
@@ -58,6 +71,7 @@ const validateCred = array =>{
     }
     return invalidCard;
   }
+  //this function return the aray in which has the company names issued invalid card
   const idInvalidCardCompanies = array =>{
     let companyName = [];
     for(const a of array){
